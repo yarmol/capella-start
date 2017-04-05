@@ -1,3 +1,20 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
+    }
+}
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -21,14 +38,21 @@ repositories {
     maven {
         url "http://central.maven.org/maven2"
     }
+    maven {url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    maven {url "http://oss.sonatype.org/content/repositories/vaadin-snapshots/" }
 
 }
 
 
 dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.3.3.RELEASE'
-    compile group: 'com.vaadin', name: 'vaadin-spring-boot-starter', version: '1.0.0'
-    compile group: 'com.vaadin', name: 'vaadin-push', version: '7.6.3'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.2.RELEASE'
+    compile group: 'com.vaadin', name: 'vaadin-spring-boot-starter', version: '2.0.0'
+    compile group: 'com.vaadin', name: 'vaadin-push', version: '8.0.0'
 }
- 
+
+dependencyManagement {
+    imports {
+        mavenBom 'com.vaadin:vaadin-bom:8.0.0'
+    }
+}
 

@@ -34,7 +34,7 @@ import java.util.TimerTask;
 
 @SpringUI
 // No @Push annotation, we are going to enable it programmatically when the user logs on
-@Theme(Runo.THEME_NAME) // Looks nicer
+@Theme(com.vaadin.ui.themes..THEME_NAME) // Looks nicer
 public class SecuredUI extends UI {
 
     @Autowired
