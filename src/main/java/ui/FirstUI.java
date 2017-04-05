@@ -1,1 +1,0 @@
-package ui;import com.vaadin.server.VaadinRequest;import com.vaadin.spring.annotation.SpringUI;import com.vaadin.ui.UI;/** * @author vyarmole on 05.04.17. */@SpringUIpublic class FirstUI extends UI {  @Override  protected void init(VaadinRequest vaadinRequest) {    setContent(new com.vaadin.ui.Label("Hello! I'm the root UI!"));  }}

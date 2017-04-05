@@ -1,1 +1,0 @@
-package me.jarad.configuration;import org.springframework.session.hazelcast.config.annotation.web.http.EnableHazelcastHttpSession;/** * @author vyarmole on 04.04.17. */@EnableHazelcastHttpSessionpublic class HttpSessionConfig {}
