@@ -1,4 +1,4 @@
-package me.jarad;
+package me.jarad.configuration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
