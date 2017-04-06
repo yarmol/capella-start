@@ -17,7 +17,6 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.themes.Runo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
@@ -34,7 +33,7 @@ import java.util.TimerTask;
 
 @SpringUI
 // No @Push annotation, we are going to enable it programmatically when the user logs on
-@Theme(com.vaadin.ui.themes..THEME_NAME) // Looks nicer
+@Theme(com.vaadin.ui.themes.Runo.THEME_NAME) // Looks nicer
 public class SecuredUI extends UI {
 
     @Autowired
