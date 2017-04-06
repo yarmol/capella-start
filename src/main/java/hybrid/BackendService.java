@@ -1,10 +1,16 @@
 package hybrid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BackendService {
+
+
+    @Autowired
+    private MongoService mongoService;
+
 
     @Secured("ROLE_ADMIN")
     public String adminMethod() {
@@ -13,6 +19,9 @@ public class BackendService {
 
     @Secured({ "ROLE_ADMIN", "ROLE_USER" })
     public String userMethod() {
+
+        mongoService.save("User object");
+
         return "Hello from a user method";
     }
 }

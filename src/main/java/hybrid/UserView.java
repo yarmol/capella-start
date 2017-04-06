@@ -9,7 +9,8 @@ import com.vaadin.ui.VerticalLayout;
 @SpringView(name = "") // Root view
 public class UserView extends VerticalLayout implements View {
 
-    public UserView() {
+
+      public UserView() {
         setMargin(true);
         addComponent(new Label("User view"));
     }

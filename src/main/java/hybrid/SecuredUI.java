@@ -33,7 +33,7 @@ import java.util.TimerTask;
 
 @SpringUI
 // No @Push annotation, we are going to enable it programmatically when the user logs on
-@Theme(com.vaadin.ui.themes.Runo.THEME_NAME) // Looks nicer
+@Theme("reindeer") // Looks nicer
 public class SecuredUI extends UI {
 
     @Autowired
@@ -72,6 +72,10 @@ public class SecuredUI extends UI {
         layout.setSpacing(true);
         layout.setSizeFull();
 
+//        TabSheet tabsheet = new TabSheet();
+//        layout.addComponent(tabsheet);
+
+
         HorizontalLayout buttons = new HorizontalLayout();
         buttons.setSpacing(true);
         layout.addComponent(buttons);
@@ -91,6 +95,7 @@ public class SecuredUI extends UI {
             getNavigator().navigateTo("admin");
         }));
         buttons.addComponent(new Button("Logout", event -> logout()));
+
         timeAndUser = new Label();
         timeAndUser.setSizeUndefined();
         buttons.addComponent(timeAndUser);

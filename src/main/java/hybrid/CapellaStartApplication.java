@@ -11,8 +11,12 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-public class HybridSecuritySampleApplication {
+@SpringBootApplication(exclude =
+        {
+        SecurityAutoConfiguration.class
+})
+public class CapellaStartApplication {
+
 
     @Configuration
     @EnableGlobalMethodSecurity(securedEnabled = true)
@@ -41,6 +45,6 @@ public class HybridSecuritySampleApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(HybridSecuritySampleApplication.class, args);
+        SpringApplication.run(CapellaStartApplication.class, args);
     }
 }
