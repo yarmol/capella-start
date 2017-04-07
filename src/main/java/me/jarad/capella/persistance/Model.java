@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.persistance;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

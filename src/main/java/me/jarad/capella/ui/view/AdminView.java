@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.ui.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -6,13 +6,12 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-@SpringView(name = "") // Root view
-public class UserView extends VerticalLayout implements View {
+@SpringView(name = "admin")
+public class AdminView extends VerticalLayout implements View {
 
-
-      public UserView() {
+    public AdminView() {
         setMargin(true);
-        addComponent(new Label("User view"));
+        addComponent(new Label("Admin view"));
     }
 
     @Override

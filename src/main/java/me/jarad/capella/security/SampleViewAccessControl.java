@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.security;
 
 import com.vaadin.spring.access.ViewAccessControl;
 import com.vaadin.ui.UI;

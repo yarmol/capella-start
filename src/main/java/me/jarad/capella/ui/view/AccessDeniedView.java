@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.ui.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;

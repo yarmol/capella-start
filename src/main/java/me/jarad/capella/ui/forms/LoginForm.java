@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.ui.forms;
 
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.ui.Button;

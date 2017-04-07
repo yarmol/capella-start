@@ -1,8 +1,10 @@
-package hybrid;
+package me.jarad.capella.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
+
+import me.jarad.capella.persistance.MongoService;
 
 @Service
 public class BackendService {

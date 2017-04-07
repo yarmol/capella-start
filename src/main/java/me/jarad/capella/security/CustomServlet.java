@@ -1,4 +1,4 @@
-package hybrid;
+package me.jarad.capella.security;
 
 import com.vaadin.server.CustomizedSystemMessages;
 import com.vaadin.server.SystemMessagesProvider;
