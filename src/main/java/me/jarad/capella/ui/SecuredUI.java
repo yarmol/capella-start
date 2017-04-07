@@ -27,20 +27,20 @@ import me.jarad.capella.ui.view.ErrorView;
 
 @SpringUI
 // No @Push annotation, we are going to enable it programmatically when the user logs on
-@Theme("reindeer") // Looks nicer
+@Theme("runo") // Looks nicer
 public class SecuredUI extends UI {
 
     @Autowired
-    private AuthenticationManager authenticationManager;
+    AuthenticationManager authenticationManager;
 
     @Autowired
-    private BackendService backendService;
-
-     @Autowired
-    private SpringViewProvider viewProvider;
+    BackendService backendService;
 
     @Autowired
-    private ErrorView errorView;
+    SpringViewProvider viewProvider;
+
+    @Autowired
+    ErrorView errorView;
 
     @Override
     protected void init(VaadinRequest request) {

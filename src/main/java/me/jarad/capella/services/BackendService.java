@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
-import me.jarad.capella.persistance.MongoService;
+import me.jarad.capella.persistance.services.MongoService;
 
 @Service
-public class BackendService {
+public class BackendService implements InvocationService{
 
 
     @Autowired
@@ -25,5 +25,10 @@ public class BackendService {
         mongoService.save("User object");
 
         return "Hello from a user method";
+    }
+
+    @Override
+    public void invoke() {
+
     }
 }

@@ -1,0 +1,1 @@
+package me.jarad.capella.screen;import com.vaadin.ui.AbstractLayout;/** * @author vyarmole on 07.04.17. */public interface ScreenProvider {  AbstractLayout provide();}

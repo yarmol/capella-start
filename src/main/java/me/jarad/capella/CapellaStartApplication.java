@@ -12,14 +12,13 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import me.jarad.capella.persistance.ModelMongoRepository;
 import me.jarad.capella.security.VaadinSessionSecurityContextHolderStrategy;
 
 @SpringBootApplication(exclude =
         {
         SecurityAutoConfiguration.class
 })
-@EnableMongoRepositories(basePackageClasses = ModelMongoRepository.class)
+@EnableMongoRepositories(basePackages = "me.jarad.capella.persistance.repository")
 public class CapellaStartApplication {
 
 

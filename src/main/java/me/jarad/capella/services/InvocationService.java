@@ -1,0 +1,1 @@
+package me.jarad.capella.services;/** * @author vyarmole on 07.04.17. */public interface InvocationService {  void invoke();}
