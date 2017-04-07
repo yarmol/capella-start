@@ -1,0 +1,1 @@
+package me.jarad.capella.model.security;import com.fasterxml.jackson.annotation.JsonInclude;import org.springframework.data.annotation.Id;/** * @author vyarmole on 07.04.17. */@JsonInclude(JsonInclude.Include.NON_NULL)public class Permission {  @Id  private long id;  private User user;  private Role role;  private boolean active;}

@@ -27,6 +27,7 @@ import me.jarad.capella.ui.view.ErrorView;
 
 @SpringUI
 // No @Push annotation, we are going to enable it programmatically when the user logs on
+// runo, reindeer, chameleon, base, valo
 @Theme("runo") // Looks nicer
 public class SecuredUI extends UI {
 

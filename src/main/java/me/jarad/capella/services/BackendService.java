@@ -7,12 +7,11 @@ import org.springframework.stereotype.Service;
 import me.jarad.capella.persistance.services.MongoService;
 
 @Service
-public class BackendService implements InvocationService{
+public class BackendService{
 
 
     @Autowired
     private MongoService mongoService;
-
 
     @Secured("ROLE_ADMIN")
     public String adminMethod() {
@@ -27,8 +26,4 @@ public class BackendService implements InvocationService{
         return "Hello from a user method";
     }
 
-    @Override
-    public void invoke() {
-
-    }
 }
