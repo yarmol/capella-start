@@ -11,6 +11,8 @@ import com.vaadin.spring.navigator.SpringViewProvider;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +21,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import java.util.Map;
+
+import me.jarad.capella.application.ApplicationInitialization;
+import me.jarad.capella.application.MainApplicationContext;
 import me.jarad.capella.security.SecurityUtils;
 import me.jarad.capella.services.BackendService;
 import me.jarad.capella.ui.forms.LoginForm;
@@ -29,8 +35,9 @@ import me.jarad.capella.ui.view.ErrorView;
 // No @Push annotation, we are going to enable it programmatically when the user logs on
 // runo, reindeer, chameleon, base, valo
 @Theme("runo") // Looks nicer
-public class SecuredUI extends UI {
+public class MainUI extends UI {
 
+    private Logger LOGGER = LoggerFactory.getLogger(MainUI.class);
     @Autowired
     AuthenticationManager authenticationManager;
 
@@ -43,9 +50,15 @@ public class SecuredUI extends UI {
     @Autowired
     ErrorView errorView;
 
+    private static Map<Class,Class> entityService = ApplicationInitialization.fillServices();
+
+
     @Override
     protected void init(VaadinRequest request) {
         getPage().setTitle("Vaadin and Spring Security Demo - Hybrid Security");
+
+        LOGGER.info("entityService =" + entityService);
+
         if (SecurityUtils.isLoggedIn()) {
             showMain();
         } else {
@@ -58,7 +71,14 @@ public class SecuredUI extends UI {
     }
 
     private void showMain() {
-        setContent(new MainScreenForm(this));
+
+
+
+        MainApplicationContext appContext = new MainApplicationContext();
+        appContext.setEntityService(entityService);
+        UI.getCurrent().setData(appContext);
+
+        setContent(new MainScreenForm());
     }
 
     @Override

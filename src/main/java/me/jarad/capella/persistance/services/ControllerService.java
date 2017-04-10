@@ -1,0 +1,1 @@
+package me.jarad.capella.persistance.services;/** * @author vyarmole on 10.04.17. */public interface ControllerService {}

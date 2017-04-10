@@ -1,0 +1,1 @@
+package me.jarad.capella.application;import java.lang.annotation.ElementType;import java.lang.annotation.Retention;import java.lang.annotation.RetentionPolicy;import java.lang.annotation.Target;/** * @author vyarmole on 10.04.17. */@Target({ElementType.TYPE})@Retention(RetentionPolicy.RUNTIME)public @interface EntityName {  Class entityClass();}
